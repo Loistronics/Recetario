@@ -54,7 +54,87 @@ def leer_receta(directorio):
         system("cls")
         leer_receta(directorio)
 
+def crear_receta(directorio):
+    system("cls")
+    categorias = os.listdir(directorio)
+    for i in enumerate(categorias):
+        print(f"{i[0] + 1} - {i[1]}")
+    opcion = input("Escribe el nombre de la categoria donde vas a crear la receta: ")
+    if Path(directorio,opcion).exists():
+        system("cls")
+        nombre_receta = input("Por favor escriba el nombre de la receta: ")
+        system("cls")
+        receta = input("Escriba a continuacion la receta: ")
+        system("cls")
+        desicion = input("Esta seguro de crear el archivo con la informacion antes proporcionada?(Si/No): ")
+        if desicion.lower() == "si":
+            nueva_receta = open(Path(directorio,opcion,f"{nombre_receta.title().replace(' ','')}.txt"),"w")
+            nueva_receta.write(receta)
+            nueva_receta.close()
+            system("cls")
+            print("Receta Creada")
+            input()
+    else:
+        print("Opcion INCORRECTA")
+        system("cls")
+        leer_receta(directorio)
 
+def crear_categoria(directorio):
+    system("cls")
+    nueva_categoria = input("Ingrese el nombre de la nueva categoria: ")
+    system("cls")
+    desicion = input("Esta seguro de crear el archivo con la informacion antes proporcionada?(Si/No): ")
+    if desicion.lower() == "si":
+        if Path(directorio, nueva_categoria).exists():
+            system("cls")
+            print("La categoria ya existe no puede ser creada")
+        else:
+            os.makedirs(Path(directorio,nueva_categoria))
+            print("La Categoria ha sido CREADA")
+            input()
+
+def eliminar_receta(directorio):
+    system("cls")
+    categorias = os.listdir(directorio)
+    for i in enumerate(categorias):
+        print(f"{i[0] + 1} - {i[1]}")
+    categoria = input("Escribe el nombre de alguna de las categorias: ")
+    if Path(directorio,categoria).exists():
+        system("cls")
+        recetas = os.listdir(Path(directorio,categoria))
+        for i in enumerate(recetas):
+            print(f"{i[0] + 1} - {i[1]}")
+        receta = input("Escribe el nombre de la receta a eliminar: ")
+        system("cls")
+        desicion = input(f"Esta seguro de eliminar la receta {receta}?(Si/No): ")
+        if desicion.lower() == "si":
+            if Path(directorio, categoria, receta).exists():
+                system("cls")
+                os.remove(Path(directorio, categoria,receta))
+                print("La receta ya fue ELIMINADA")
+                input()
+            else:
+                print("La receta NO EXISTE")
+                input()
+    else:
+        print("Opcion INCORRECTA")
+        system("cls")
+        leer_receta(directorio)
+
+def eliminar_categoria(directorio):
+    system("cls")
+    categoria = input("Ingrese el nombre de la categoria a eliminar: ")
+    system("cls")
+    desicion = input(f"Esta seguro de eliminar la categoria {categoria}?(Si/No): ")
+    if desicion.lower() == "si":
+        if Path(directorio, categoria).exists():
+            system("cls")
+            shutil.rmtree(Path(directorio, categoria))
+            print("La categoria ya fue ELIMINADA")
+            input()
+        else:
+            print("La Categoria NO EXISTE")
+            input()
 
 
 #El diccionario a continuacion es la estructura inicial las claves son subdirectorios de Recetas y los valores son archivos
@@ -72,7 +152,17 @@ while True:
     match opcion:
         case "1":
             leer_receta(raiz_recetas)
+        case "2":
+            crear_receta(raiz_recetas)
+        case "3":
+            crear_categoria(raiz_recetas)
+        case "4":
+            eliminar_receta(raiz_recetas)
+        case "5":
+            eliminar_categoria(raiz_recetas)
         case  "6":
             break
         case _:
             print("Por Favor Introduzca una opcion CORRECTA")
+
+print("!! GRACIAS !!")
