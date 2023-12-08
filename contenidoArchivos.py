@@ -1,4 +1,4 @@
-recetaEtrecotAlMalbec = """
+RecetaEtrecotAlMalbec = """
     Entrecot al Malbec
         Ingredientes:
             4 entrecotes
@@ -20,7 +20,7 @@ recetaEtrecotAlMalbec = """
             Coloca los entrecotes en la sartén para que se impregnen con la salsa.
             Sirve los entrecotes bañados con la salsa de malbec y espolvorea perejil picado por encima.
     """
-recetaMatambrePizza = """
+RecetaMatambrePizza = """
     Matambre a la Pizza
         Ingredientes:
             1 kg de matambre
@@ -42,7 +42,7 @@ recetaMatambrePizza = """
             Agregar las aceitunas negras por encima y hornear durante 20-25 minutos o hasta que el queso esté dorado y burbujeante.
             Servir caliente y disfrutar.
     """
-recetaEnsaladaGriega = """
+RecetaEnsaladaGriega = """
     Ensalada Griega
         Ingredientes:
             1 tomate grande
@@ -62,7 +62,7 @@ recetaEnsaladaGriega = """
             Aliña la ensalada con aceite de oliva, vinagre de vino tinto, sal, pimienta negra molida y orégano seco al gusto.
             Mezcla bien todos los ingredientes y sirve.
     """
-recetaEnsaladaMediterranea = """
+RecetaEnsaladaMediterranea = """
     Ensalada Mediterránea
         Ingredientes:
         200 g de tomates cherry
@@ -80,7 +80,7 @@ recetaEnsaladaMediterranea = """
         Aliña la ensalada al gusto con sal, vinagre y aceite de oliva virgen extra.
         Sirve y disfruta.
     """
-recetaCanelonesDeEspinaca = """
+RecetaCanelonesDeEspinaca = """
     Canelones de Espinaca y Ricotta
         Ingredientes:
             4 atados de espinaca
@@ -106,7 +106,7 @@ recetaCanelonesDeEspinaca = """
             Luego, vierte el agua en el bol y hornea los canelones en el agua caliente hasta que la pasta esté cocida y los canelones floten.
             Sirve los canelones de espinaca y ricotta con la salsa de tu elección y disfruta.
     """
-recetaRaviolesDeRicotta = """
+RecetaRaviolesDeRicotta = """
     Ingredientes:
         200 g de harina
         2 huevos
@@ -123,7 +123,7 @@ recetaRaviolesDeRicotta = """
         Hierve los raviolis en agua con sal durante 2-3 minutos o hasta que floten en la superficie.
         Sirve los raviolis con la salsa de tu elección y disfruta.
     """
-recetaCompotaDeManzana = """
+RecetaCompotaDeManzana = """
     Compota de Manzana
         Ingredientes:
             5 manzanas
@@ -142,7 +142,7 @@ recetaCompotaDeManzana = """
             Verter la mezcla en un recipiente o forma de compota y hornear durante 45 minutos a 350°F (175°C) o hasta que esté dorada y cocida.
             Dejar que la compota se enfríe antes de servir.
     """
-recetaTartaDeFrambuesas = """
+RecetaTartaDeFrambuesas = """
     Tarta de Frambuesas y Crema de Vainilla 
         Ingredientes:
             500 ml de Leche entera

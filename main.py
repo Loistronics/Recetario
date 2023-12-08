@@ -49,6 +49,8 @@ def leer_receta(directorio):
         receta_archivo = open(Path(directorio,opcion,archivo))
         print(receta_archivo.read())
         receta_archivo.close()
+        input("Presione Enter para continuar")
+        system("cls")
     else:
         print("Opcion INCORRECTA")
         system("cls")
@@ -68,12 +70,17 @@ def crear_receta(directorio):
         system("cls")
         desicion = input("Esta seguro de crear el archivo con la informacion antes proporcionada?(Si/No): ")
         if desicion.lower() == "si":
-            nueva_receta = open(Path(directorio,opcion,f"{nombre_receta.title().replace(' ','')}.txt"),"w")
-            nueva_receta.write(receta)
-            nueva_receta.close()
-            system("cls")
-            print("Receta Creada")
-            input()
+            if Path(directorio, opcion, nombre_receta + ".txt").exists():
+                system("cls")
+                print("La receta ya existe no puede ser creada")
+            else:
+                nueva_receta = open(Path(directorio,opcion,f"{nombre_receta.title().replace(' ','')}.txt"),"w")
+                nueva_receta.write(receta)
+                nueva_receta.close()
+                system("cls")
+                print("Receta Creada")
+                input()
+                system("cls")
     else:
         print("Opcion INCORRECTA")
         system("cls")
@@ -92,6 +99,7 @@ def crear_categoria(directorio):
             os.makedirs(Path(directorio,nueva_categoria))
             print("La Categoria ha sido CREADA")
             input()
+            system("cls")
 
 def eliminar_receta(directorio):
     system("cls")
@@ -113,9 +121,11 @@ def eliminar_receta(directorio):
                 os.remove(Path(directorio, categoria,receta))
                 print("La receta ya fue ELIMINADA")
                 input()
+                system("cls")
             else:
                 print("La receta NO EXISTE")
                 input()
+                system("cls")
     else:
         print("Opcion INCORRECTA")
         system("cls")
@@ -135,30 +145,37 @@ def eliminar_categoria(directorio):
         else:
             print("La Categoria NO EXISTE")
             input()
+            system("cls")
 
 
 #El diccionario a continuacion es la estructura inicial las claves son subdirectorios de Recetas y los valores son archivos
 estructura_inicial = {
-    "Carnes":["recetaEtrecotAlMalbec", "recetaMatambrePizza"],
-    "Ensaladas":["recetaEnsaladaGriega", "recetaEnsaladaMediterranea"],
-    "Pastas":["recetaCanelonesDeEspinaca", "recetaRaviolesDeRicotta"],
-    "Postres":["recetaCompotaDeManzana", "recetaTartaDeFrambuesas"]
+    "Carnes":["RecetaEtrecotAlMalbec", "RecetaMatambrePizza"],
+    "Ensaladas":["RecetaEnsaladaGriega", "RecetaEnsaladaMediterranea"],
+    "Pastas":["RecetaCanelonesDeEspinaca", "RecetaRaviolesDeRicotta"],
+    "Postres":["RecetaCompotaDeManzana", "RecetaTartaDeFrambuesas"]
 }
 raiz_recetas = crear_directorios()
 crear_archivos(raiz_recetas,estructura_inicial)
 bienvenida(raiz_recetas)
 while True:
+    print("Menu: 1- Leer Receta   2- Crear Receta   3- Crear Categoria   4- Eliminar Receta   5- Eliminar Categoria   6- Salir")
     opcion = input("Por favor introduce una opcion: ")
     match opcion:
         case "1":
+            system("cls")
             leer_receta(raiz_recetas)
         case "2":
+            system("cls")
             crear_receta(raiz_recetas)
         case "3":
+            system("cls")
             crear_categoria(raiz_recetas)
         case "4":
+            system("cls")
             eliminar_receta(raiz_recetas)
         case "5":
+            system("cls")
             eliminar_categoria(raiz_recetas)
         case  "6":
             break
